@@ -17,6 +17,28 @@
 
 
     </form>
-    
+
+   <% if  (locals.result) {%>
+
+    <h2> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
+
+    <p> The temperature is -- <%= result.data[0].app_temp %></p>
+
+    <p>Date </p>
+
+    <p> Min Temp </p>
+
+    <p> Max Temp</p>
+
+    <p>Sunrise time</p>
+
+    <p>Sunset Time</p>
+
+    <p>Wind degree</p>
+
+
+    <p>  <%= result.data[0].weather.icon %> </p>
+
+    <% } %>
 </body>
 </html>
