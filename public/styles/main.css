@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;500&display=swap');
 
+ @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&display=swap');
+
+
 .bggreen{
     background-color: #4F6F52;
 }
@@ -8,4 +11,13 @@
     font-family: 'Josefin Sans', sans-serif;
     font-weight: bold;
     color: #D2E3C8;
+}
+
+.bggreen2{
+
+    background-color: #F5F5DC;
+}
+
+.txtfam2{
+    font-family: 'Dancing Script', cursive;
 }

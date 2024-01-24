@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <header class="py-3 mb-4 border-bottom bggreen">
+    <header class="py-0 mb-0 border-bottom bggreen">
         <div class="container d-flex flex-wrap justify-content-center ">
           <a href="/" class="d-flex align-items-center mb-3 mb-lg-0 me-lg-auto link-body-emphasis text-decoration-none">
             <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
@@ -20,42 +20,64 @@
           </form>
         </div>
       </header>
-    <h2> Welcome to the api app</h2>
-    <img src = "./icons/a02d.png">
 
 
-    <form action="/getD" method="post">
-        <label for="usrin">Enter the Name of the city that you want to know the current weather of </label>
-        <input id="usrin" type = "text" name="inp" value = ""/>
+      <div class="bggreen2 py-0">
 
-        <button type="submit" >Check weather</button>
+        <div class="px-4 py-5 my-0 text-center">
+            <h1 class="display-5 fw-bold text-body-emphasis txtfam2">Enter The Name Of The City You Want To Know The Weather Of </h1>
+            <div class="col-lg-6 mx-auto">
+              <p class="lead mb-4 txtfam2 fs-4">We provide weather data such as temperature, aqi, wind direction etc.</p>
+              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                <form action="/getD" method="post">
+                    <label for="usrin">Enter the Name of the city that you want to know the current weather of </label>
+                    <input id="usrin" type = "text" name="inp" value = ""/>
+            
+                    <button type="submit" >Check weather</button>
+            
+            
+                </form>
+            
+              </div>
+            </div>
+          </div>
+        <div class="container text-center"> 
+            <h2> Welcome to the api app</h2>
+        <img src = "./icons/a02d.png">
+    
+    
+        
+       <% if  (locals.result) {%>
+    
+        <h2> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
+    
+        <p> The temperature is -- <%= result.data[0].app_temp %></p>
+    
+        <p>Date -- <%= result.data[0].datetime %> </p>
+    
+        <p> Air Quality Index :<%= result.data[0].aqi %> </p>
+    
+    
+        <p>Sunrise time : <%= result.data[0].sunrise %></p>
+    
+        <p>Sunset Time <%= result.data[0].sunset %></p>
+    
+        <p>Wind degree <%= result.data[0].wind_cdir %></p>
+    
+    
+        <p>  <%= result.data[0].weather.icon %> </p>
+    
+        <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
+    
+    
+        <% } %>
+    
+    
+          </div>
+         
 
-
-    </form>
-
-   <% if  (locals.result) {%>
-
-    <h2> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
-
-    <p> The temperature is -- <%= result.data[0].app_temp %></p>
-
-    <p>Date -- <%= result.data[0].datetime %> </p>
-
-    <p> Air Quality Index :<%= result.data[0].aqi %> </p>
-
-
-    <p>Sunrise time : <%= result.data[0].sunrise %></p>
-
-    <p>Sunset Time <%= result.data[0].sunset %></p>
-
-    <p>Wind degree <%= result.data[0].wind_cdir %></p>
-
-
-    <p>  <%= result.data[0].weather.icon %> </p>
-
-    <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
-
-
-    <% } %>
+      </div>
+      
+    
 </body>
 </html>
