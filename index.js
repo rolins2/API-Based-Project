@@ -9,6 +9,8 @@ const port = 3000;
 const urls  = "https://api.weatherbit.io/v2.0/current";
 const api_key = "37e9beda33594207a415b790b51fc226"; 
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(express.static("public"))
+
 
 app.get("/",(req,res)=>{
     res.render("index.ejs");

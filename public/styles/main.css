@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200;400;500&display=swap');
+
+.bggreen{
+    background-color: #4F6F52;
+}
+
+.txtfam{
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: bold;
+    color: #D2E3C8;
+}
