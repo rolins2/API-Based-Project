@@ -29,86 +29,98 @@
     
         
        <% if  (locals.result) {%>
-    
-        <h2> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
-    
-        <p> The temperature is -- <%= result.data[0].app_temp %></p>
-    
-        <p>Date -- <%= result.data[0].datetime %> </p>
-    
-        <p> Air Quality Index :<%= result.data[0].aqi %> </p>
-    
-    
-        <p>Sunrise time : <%= result.data[0].sunrise %></p>
-    
-        <p>Sunset Time <%= result.data[0].sunset %></p>
-    
-        <p>Wind degree <%= result.data[0].wind_cdir %></p>
-    
-    
-        <p>  <%= result.data[0].weather.icon %> </p>
-    
-        <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
+
+        <div class="container">
+          <div class="align-items-center justify-content-center">
+            <h2 class ="txtfam3"> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
+
+            <p> The temperature is -- <%= result.data[0].app_temp %></p>
+      
+            <p>Date -- <%= result.data[0].datetime %> </p>
+        
+            <p> Air Quality Index :<%= result.data[0].aqi %> </p>
+        
+        
+            <p>Sunrise time : <%= result.data[0].sunrise %></p>
+        
+            <p>Sunset Time <%= result.data[0].sunset %></p>
+        
+            <p>Wind degree <%= result.data[0].wind_cdir %></p>
+        
+        
+            <p>  <%= result.data[0].weather.icon %> </p>
+        
+            <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
 
 
-      <div class="container">
-
-        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                  <h4 class="my-0 fw-normal">Free</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>10 users included</li>
-                    <li>2 GB of storage</li>
-                    <li>Email support</li>
-                    <li>Help center access</li>
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm">
-                <div class="card-header py-3">
-                  <h4 class="my-0 fw-normal">Pro</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>20 users included</li>
-                    <li>10 GB of storage</li>
-                    <li>Priority email support</li>
-                    <li>Help center access</li>
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
-                </div>
-              </div>
-            </div>
-            <div class="col">
-              <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                <div class="card-header py-3 text-bg-primary border-primary">
-                  <h4 class="my-0 fw-normal">Enterprise</h4>
-                </div>
-                <div class="card-body">
-                  <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
-                  <ul class="list-unstyled mt-3 mb-4">
-                    <li>30 users included</li>
-                    <li>15 GB of storage</li>
-                    <li>Phone and email support</li>
-                    <li>Help center access</li>
-                  </ul>
-                  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
-                </div>
-              </div>
-            </div>
           </div>
-    
+        
+  
+  
+        <div class="container">
+  
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">The Temperature In <%=result.data[0].city_name %> is </h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title"> <%= result.data[0].app_temp %> degree celcius </h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>With a high of <%= result.data[0].app_temp %></li>
+                      <li>And a low of <%= result.data[0].dewpt %></li>
+                      <li>Email support</li>
+                      <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm">
+                  <div class="card-header py-3">
+                    <h4 class="my-0 fw-normal">Pro</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>20 users included</li>
+                      <li>10 GB of storage</li>
+                      <li>Priority email support</li>
+                      <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                  <div class="card-header py-3 text-bg-primary border-primary">
+                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                  </div>
+                  <div class="card-body">
+                    <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <ul class="list-unstyled mt-3 mb-4">
+                      <li>30 users included</li>
+                      <li>15 GB of storage</li>
+                      <li>Phone and email support</li>
+                      <li>Help center access</li>
+                    </ul>
+                    <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+  
+        </div>
 
-      </div>
+
+        </div>
+    
+    
+      
     
         <% }else{ %>
 
