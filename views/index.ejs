@@ -32,25 +32,38 @@
 
         <div class="container">
           <div class="align-items-center justify-content-center">
-            <h2 class ="txtfam3"> The weather in -- <%= result.data[0].city_name %> is as follows:</h2>
 
-            <p> The temperature is -- <%= result.data[0].app_temp %></p>
+            <div class="px-4 py-0 my-0 text-center">
+              <h3 class="display-5 fw-bold text-body-emphasis txtfam3 mt=2">The weather in -- <%= result.data[0].city_name %> is as follows:</h3>
+              <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
+
+
+              <div class="col-lg-6 mx-auto">
+                <div class="bd-example m-0 border-0">
+                  <div class="card text-center">
+                    <div class="card-header">
+                      Weather For The Date <%= result.data[0].datetime %>
+                    </div>
+                    <div class="card-body">
+                      <h5 class="card-title">Special title treatment</h5>
+                      <p class="card-text"><li>Wind Speed:  <%=  result.data[0].wind_spd %></li>
+                        <li> Wind Direction:  <%= result.data[0].wind_cdir_full %></li>
+                        <li>Solar Radiation: <%= result.data[0].solar_rad %></li>
+                      </p>
+                    </div>
+                    <div class="card-footer text-body-secondary">
+                      Last Updated On <%=  result.data[0].ob_time %>
+                    </div>
+                  </div>
+                  </div>               
+              </div>
+            </div>
+
       
-            <p>Date -- <%= result.data[0].datetime %> </p>
-        
-            <p> Air Quality Index :<%= result.data[0].aqi %> </p>
         
         
-            <p>Sunrise time : <%= result.data[0].sunrise %></p>
-        
-            <p>Sunset Time <%= result.data[0].sunset %></p>
-        
-            <p>Wind degree <%= result.data[0].wind_cdir %></p>
         
         
-            <p>  <%= result.data[0].weather.icon %> </p>
-        
-            <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
 
 
           </div>
@@ -59,55 +72,66 @@
   
         <div class="container">
   
-          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+          <div class="row row-cols-1 row-cols-md-3 mb-3 text-center ">
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">The Temperature In <%=result.data[0].city_name %> is </h4>
+                  <div class="card-header py-3 bggreen">
+                    <h4 class="my-0 fw-normal text-white ">The Temperature In <%=result.data[0].city_name %> is </h4>
                   </div>
                   <div class="card-body">
                     <h1 class="card-title pricing-card-title"> <%= result.data[0].app_temp %> degree celcius </h1>
                     <ul class="list-unstyled mt-3 mb-4">
                       <li>With a high of <%= result.data[0].app_temp %></li>
                       <li>And a low of <%= result.data[0].dewpt %></li>
-                      <li>Email support</li>
-                      <li>Help center access</li>
+                      <li></li>
+                      <li></li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
                   </div>
                 </div>
               </div>
               <div class="col">
                 <div class="card mb-4 rounded-3 shadow-sm">
-                  <div class="card-header py-3">
-                    <h4 class="my-0 fw-normal">Pro</h4>
+                  <div class="card-header py-3 bggreen">
+                    <h4 class="my-0 fw-normal text-white">Air Quality Index </h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title"><%= result.data[0].aqi %></h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                      <li>20 users included</li>
-                      <li>10 GB of storage</li>
-                      <li>Priority email support</li>
-                      <li>Help center access</li>
+                      <% if(result.data[0].aqi > 100) { %>
+                        <li>The quality of air isn't that good </li>
+                      <li>Use a mask while travelling outside</li>
+                      <li></li>
+                      <li></li>
+
+
+
+                        <% }  else {%>
+                          <li>The quality of air is very good</li>
+                      <li>You can enjoy your day freely</li>
+                      <li></li>
+                      <li></li>
+
+
+
+                          <% } %>
+                      
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
                   </div>
                 </div>
               </div>
               <div class="col">
-                <div class="card mb-4 rounded-3 shadow-sm border-primary">
-                  <div class="card-header py-3 text-bg-primary border-primary">
-                    <h4 class="my-0 fw-normal">Enterprise</h4>
+                <div class="card mb-4 rounded-3 shadow-sm ">
+                  <div class="card-header py-3  border-primary bggreen">
+                    <h4 class="my-0 fw-normal text-white">Sunrise And Sunset </h4>
                   </div>
                   <div class="card-body">
-                    <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                    <h1 class="card-title pricing-card-title">At</h1>
                     <ul class="list-unstyled mt-3 mb-4">
-                      <li>30 users included</li>
-                      <li>15 GB of storage</li>
-                      <li>Phone and email support</li>
-                      <li>Help center access</li>
+                      <li>Sumrise <%= result.data[0].sunrise %></li>
+                      <li>Sunset <%=result.data[0].sunset %></li>
+                      <li></li>
+                      <li></li>
                     </ul>
-                    <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
                   </div>
                 </div>
               </div>

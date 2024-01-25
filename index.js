@@ -17,7 +17,6 @@ app.get("/",(req,res)=>{
 })
 
 app.post("/getD",async(req,res)=>{
-    console.log("this point has been hit");
     console.log(req.body.inp);
 
     let reqs = urls + "?&city="+ req.body.inp +"&key=" +api_key;
