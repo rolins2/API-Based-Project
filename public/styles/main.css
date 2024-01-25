@@ -12,6 +12,11 @@
     font-weight: bold;
     color: #D2E3C8;
 }
+.txtfam3{
+    font-family: 'Josefin Sans', sans-serif;
+    
+}
+
 
 .bggreen2{
 
@@ -20,4 +25,9 @@
 
 .txtfam2{
     font-family: 'Dancing Script', cursive;
+}
+
+.sz{
+    height:100%;
+    width: 100%;
 }

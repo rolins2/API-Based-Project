@@ -24,26 +24,7 @@
 
       <div class="bggreen2 py-0">
 
-        <div class="px-4 py-5 my-0 text-center">
-            <h1 class="display-5 fw-bold text-body-emphasis txtfam2">Enter The Name Of The City You Want To Know The Weather Of </h1>
-            <div class="col-lg-6 mx-auto">
-              <p class="lead mb-4 txtfam2 fs-4">We provide weather data such as temperature, aqi, wind direction etc.</p>
-              <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
-                <form action="/getD" method="post">
-                    <label for="usrin">Enter the Name of the city that you want to know the current weather of </label>
-                    <input id="usrin" type = "text" name="inp" value = ""/>
-            
-                    <button type="submit" >Check weather</button>
-            
-            
-                </form>
-            
-              </div>
-            </div>
-          </div>
-        <div class="container text-center"> 
-            <h2> Welcome to the api app</h2>
-        <img src = "./icons/a02d.png">
+      
     
     
         
@@ -68,15 +49,115 @@
         <p>  <%= result.data[0].weather.icon %> </p>
     
         <img src = " ./icons/<%= result.data[0].weather.icon %>.png" />
+
+
+      <div class="container">
+
+        <div class="row row-cols-1 row-cols-md-3 mb-3 text-center">
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Free</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$0<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>10 users included</li>
+                    <li>2 GB of storage</li>
+                    <li>Email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-outline-primary">Sign up for free</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm">
+                <div class="card-header py-3">
+                  <h4 class="my-0 fw-normal">Pro</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$15<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>20 users included</li>
+                    <li>10 GB of storage</li>
+                    <li>Priority email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Get started</button>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card mb-4 rounded-3 shadow-sm border-primary">
+                <div class="card-header py-3 text-bg-primary border-primary">
+                  <h4 class="my-0 fw-normal">Enterprise</h4>
+                </div>
+                <div class="card-body">
+                  <h1 class="card-title pricing-card-title">$29<small class="text-body-secondary fw-light">/mo</small></h1>
+                  <ul class="list-unstyled mt-3 mb-4">
+                    <li>30 users included</li>
+                    <li>15 GB of storage</li>
+                    <li>Phone and email support</li>
+                    <li>Help center access</li>
+                  </ul>
+                  <button type="button" class="w-100 btn btn-lg btn-primary">Contact us</button>
+                </div>
+              </div>
+            </div>
+          </div>
+    
+
+      </div>
+    
+        <% }else{ %>
+
+
+            <div class="px-4 py-5 my-0 text-center">
+                <h1 class="display-5 fw-bold text-body-emphasis txtfam">Enter The Name Of The City You Want To Know The Weather Of </h1>
+                <div class="col-lg-6 mx-auto">
+                  <p class="lead mb-4 txtfam3 fs-4">We provide weather data such as temperature, aqi, wind direction etc.</p>
+                  <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+                    <form action="/getD" method="post">
+    
+                        
+                            <input placeholder="Enter the name of the city " class=" sz rounded" id="usrin" type = "text" name="inp" value = ""/>
     
     
-        <% } %>
+                        
+                
+                        <button class="btn bggreen my-2 text-white mb-2" type="submit" >Check weather</button>
+                
+                
+                    </form>
+                
+                  </div>
+                </div>
+              </div>
+            <div class="container text-center"> 
+                <h6 class="txtfam3"> <i> 
+                    "Embrace the weather, for every day brings a new forecast of possibilities, and within the elements, we find the beauty of nature's ever-changing dance."</i></h6>
+            <img src = "./icons/a02d.png">
+            <span>         <img src = "./icons/t05n.png">
+                <img src = "./icons/t04d.png">
+    
+            </span>
+
+
+            <%} %>
     
     
           </div>
          
 
       </div>
+
+      <footer class="py-4 my-2  mb-0 bggreen ">
+        <ul class="nav justify-content-center  pb-4 my-2 mt-0">
+          <p> <i class="text-white"> The weather app uses an api that is refreshed every few hours so the data may not always be accurate </i></p>
+        </ul>
+        <p class="text-center  text-white">© 2024 WeatherAPI, Inc</p>
+      </footer>
       
     
 </body>
