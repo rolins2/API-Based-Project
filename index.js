@@ -22,13 +22,11 @@ app.post("/getD",async(req,res)=>{
 
     let reqs = urls + "?&city="+ req.body.inp +"&key=" +api_key;
 
-    console.log(reqs);
 
     try{
         const response = await axios.get(reqs);
         const result = response.data;
 
-        console.log(result);
 
         res.render("index.ejs",{result});
 
