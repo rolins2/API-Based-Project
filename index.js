@@ -5,6 +5,7 @@ import bodyParser from "body-parser";
 
 const app = express();
 const port = 3000;
+const hostname = "0.0.0.0"
 
 const urls  = "https://api.weatherbit.io/v2.0/current";
 const api_key = "37e9beda33594207a415b790b51fc226"; 
@@ -36,6 +37,6 @@ app.post("/getD",async(req,res)=>{
     }
 }
 )
-app.listen(port,()=>{
+app.listen(port,hostname,()=>{
     console.log(`Listening on port ${port}`);
 })
